@@ -862,24 +862,27 @@ img { max-width: 100%; height: auto; }
   border-radius: 12px;
 
 } 
-/* Force responsive grid for Projects page */
-.projects-grid{
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(4, minmax(220px, 1fr));
-}
-
-/* Tablet */
-@media (max-width: 1200px){
-  .projects-grid{
-    grid-template-columns: repeat(3, minmax(220px, 1fr));
-  }
-}
-
-/* Mobile */
+/* Fix HERO buttons on mobile */
 @media (max-width: 768px){
-  .projects-grid{
-    grid-template-columns: repeat(2, minmax(150px, 1fr));
-    gap: 1rem;
+
+  .hero-buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .hero-buttons .btn{
+    width: 100%;
+    justify-content: center;
+    padding: 14px 16px;
+    font-size: 0.95rem;
+  }
+
+  /* لو عندك أي max-width على الأزرار */
+  .hero-buttons .btn,
+  .hero-buttons a{
+    max-width: 100%;
   }
 }

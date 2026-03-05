@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>ABDALLA SOLIMAN • Mechatronics Engineer</title>
+
+  <!-- Tailwind (optional for utilities; site works without it) -->
+  <script>
+    if (typeof console !== 'undefined' && console.warn) {
+      const originalWarn = console.warn;
+      console.warn = function(...args) {
+        if (args[0] && typeof args[0] === 'string' && args[0].includes('tailwindcss.com')) return;
+        originalWarn.apply(console, args);
+      };
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="body-main" data-theme="dark" data-lang="en" data-dir="ltr">
+
+  <!-- Loader -->
+  <div class="loader-screen" id="loader">
+    <div class="loader-content">
+      <div class="loader-code-text">
+        <div class="code-line" data-line="1">const abdalla = {</div>
+        <div class="code-line" data-line="2">  role: "Mechatronics",</div>
+        <div class="code-line" data-line="3">  status: "loading..."</div>
+        <div class="code-line" data-line="4">};</div>
+      </div>
+      <div class="loader-spinner-wrapper"><div class="loader-spinner"></div></div>
+      <div class="loader-progress-wrapper"><div class="loader-progress-bar"></div></div>
+      <div class="loader-percentage" id="loaderPercent">0%</div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header" id="header">
+    <nav class="nav-container">
+      <div class="nav-brand">
+        <div class="brand-logo">
+          <span class="logo-bracket">&lt;</span>
+          <span class="logo-text">ABDALLA</span>
+          <span class="logo-bracket">/&gt;</span>
+        </div>
+      </div>
+
+      <div class="nav-menu" id="navMenu">
+        <a href="#home" class="nav-link active" data-section="home">
+          <i class="fas fa-home"></i>
+          <span class="nav-text"
+            data-text-en="Home"
+            data-text-ar="الرئيسية"
+            data-text-tr="Ana Sayfa"
+            data-text-de="Start">Home</span>
+        </a>
+
+        <a href="#about" class="nav-link" data-section="about">
+          <i class="fas fa-user"></i>
+          <span class="nav-text"
+            data-text-en="About"
+            data-text-ar="نبذة"
+            data-text-tr="Hakkımda"
+            data-text-de="Über mich">About</span>
+        </a>
+
+        <a href="#skills" class="nav-link" data-section="skills">
+          <i class="fas fa-code"></i>
+          <span class="nav-text"
+            data-text-en="Skills"
+            data-text-ar="المهارات"
+            data-text-tr="Yetenekler"
+            data-text-de="Skills">Skills</span>
+        </a>
+
+        <a href="#projects" class="nav-link" data-section="projects">
+          <i class="fas fa-rocket"></i>
+          <span class="nav-text"
+            data-text-en="Projects"
+            data-text-ar="المشاريع"
+            data-text-tr="Projeler"
+            data-text-de="Projekte">Projects</span>
+        </a>
+
+        <a href="#contact" class="nav-link" data-section="contact">
+          <i class="fas fa-envelope"></i>
+          <span class="nav-text"
+            data-text-en="Contact"
+            data-text-ar="التواصل"
+            data-text-tr="İletişim"
+            data-text-de="Kontakt">Contact</span>
+        </a>
+      </div>
+
+      <div class="nav-controls">
+       
+	<div class="lang-dropdown" id="langDropdown">
+ 		 <button class="lang-toggle" id="langToggle" type="button" title="Language">
+   		 <i class="fas fa-language"></i>
+   		 <span class="lang-text" id="langText">EN</span>
+   		 <i class="fas fa-chevron-down" style="font-size:.8rem; opacity:.8;"></i>
+ 	 </button>
+
+ 	 <div class="lang-menu" id="langMenu">
+  	  <button type="button" class="lang-option" data-lang="en">English</button>
+  	  <button type="button" class="lang-option" data-lang="ar">العربية</button>
+  	  <button type="button" class="lang-option" data-lang="tr">Türkçe</button>
+  	  <button type="button" class="lang-option" data-lang="de">Deutsch</button>
+ 	 </div>
+	</div>
+	</div>
+
+        <button class="theme-toggle" id="themeToggle" title="Toggle Theme">
+          <i class="fas fa-sun"></i>
+        </button>
+
+        <button class="menu-toggle" id="menuToggle" title="Toggle Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main-content">
+
+    <!-- HERO -->
+    <section id="home" class="hero-section">
+      <div class="hero-background">
+        <div class="code-grid-bg"></div>
+        <div class="floating-particles" id="particles"></div>
+      </div>
+
+      <div class="hero-container">
+        <div class="hero-content fade-in">
+          <div class="hero-greeting">
+            <span class="greeting-text"
+              data-text-en="Hello, I'm"
+              data-text-ar="مرحباً، أنا"
+              data-text-tr="Merhaba, ben"
+              data-text-de="Hallo, ich bin">Hello, I'm</span>
+            <span class="greeting-cursor">|</span>
+          </div>
+
+          <h3 class="hero-name" id="heroName">
+            <span class="name-prefix">const</span>
+            <span class="name-operator">=</span>
+            <span class="name-value" data-text-en="ABDALLA SOLIMAN" data-text-ar="عبدالله سليمان" data-text-tr="ABDALLA SOLIMAN" data-text-de="ABDALLA SOLIMAN">ABDALLA SOLIMAN</span>
+            <span class="name-suffix">;</span>
+          </h3>
+
+          <div class="hero-title">
+            <span class="title-prefix">//</span>
+            <span class="title-text"
+              data-text-en="Mechatronics Engineer • Builder • Problem Solver"
+              data-text-ar="مهندس ميكاترونكس • صانع • محلّل مشاكل"
+              data-text-tr="Mekatronik Mühendisiyim • Üreten • Problem Çözen"
+              data-text-de="Mechatronik-Ingenieur • Macher • Problemlöser">
+              Mechatronics Engineer • Builder • Problem Solver
+            </span>
+          </div>
+
+          <p class="hero-description"
+            data-text-en="Learning by doing. I build real engineering projects, improve my skills daily, and turn ideas into functional systems."
+            data-text-ar="أتعلّم بالتطبيق العملي. أبني مشاريع هندسية حقيقية، وأطوّر مهاراتي يومياً، وأحوّل الأفكار إلى أنظمة تعمل."
+            data-text-tr="Yaparak öğreniyorum. Gerçek mühendislik projeleri geliştiriyor, her gün kendimi geliştiriyor ve fikirleri çalışan sistemlere dönüştürüyorum."
+            data-text-de="Learning by doing. Ich baue echte Projekte, verbessere mich täglich und verwandle Ideen in funktionierende Systeme.">
+            Learning by doing. I build real engineering projects, improve my skills daily, and turn ideas into functional systems.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">
+              <span data-text-en="Get In Touch" data-text-ar="تواصل معي" data-text-tr="İletişime Geç" data-text-de="Kontakt">
+                Get In Touch
+              </span>
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="./projects.html" class="btn btn-secondary">
+		  <span data-text-en="View Projects" data-text-ar="عرض المشاريع" data-text-tr="Projeleri Gör" data-text-de="Projekte ansehen">
+		    View Projects
+		  </span>
+ 		  <i class="fas fa-code"></i>
+	   </a>
+	 <a href="./certificates.html" class="btn btn-secondary">
+            <span data-text-en="Certificates" data-text-ar="الشهادات" data-text-tr="Sertifikalar" data-text-de="Zertifikate">
+              Certificates
+            </span>
+            <i class="fas fa-certificate"></i>
+         </a>
+          </div>
+
+          <div class="hero-social">
+            <!-- Email icon -->
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=010alzooz@gmail.com"
+              class="social-icon" title="Email"
+              target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-envelope"></i>
+          </a>
+
+            <!-- Phone icon (WhatsApp) -->
+        <a href="https://wa.me/905451290190"
+           class="social-icon" title="WhatsApp"
+           target="_blank" rel="noopener noreferrer">
+           <i class="fas fa-phone"></i>
+        </a>
+            <!-- LinkedIn icon -->
+        <a href="https://www.linkedin.com/in/abdalla-soliman-44a575273 "
+           class="social-icon" title="LinkedIn"
+           target="_blank" rel="noopener noreferrer">
+           <i class="fab fa-linkedin-in"></i>
+        </a>
+
+            <!-- GitHub icon -->
+       <a href="https://github.com/Amd41"
+         class="social-icon" title="GitHub"
+         target="_blank" rel="noopener noreferrer">
+         <i class="fab fa-github"></i>
+        </a>
+          </div>
+        </div>
+
+        <div class="hero-image-wrapper fade-in">
+          <div class="hero-image-container">
+            <div class="profile-image-glow"></div>
+            <div class="profile-image-frame">
+              <div class="profile-image" id="profileImage">
+                <div class="profile-placeholder">
+                  <i class="fas fa-robot"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-1">
+              <i class="fas fa-cube"></i>
+              <div class="badge-content">
+                <span class="badge-title">SolidWorks</span>
+                <span class="badge-libs" data-text-en="CAD • Assemblies • CAM" data-text-ar="تصميم • تجميع • CAM" data-text-tr="CAD • Montaj • CAM" data-text-de="CAD • Baugruppen • CAM">
+                  CAD • Assemblies • CAM
+                </span>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-2">
+              <i class="fas fa-wave-square"></i>
+              <div class="badge-content">
+                <span class="badge-title">MATLAB</span>
+                <span class="badge-libs" data-text-en="Simulink • Simscape" data-text-ar="سيميولنك • سيمسكيب" data-text-tr="Simulink • Simscape" data-text-de="Simulink • Simscape">
+                  Simulink • Simscape
+                </span>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-3">
+              <i class="fas fa-industry"></i>
+              <div class="badge-content">
+                <span class="badge-title">KUKA</span>
+                <span class="badge-libs" data-text-en="Robot programming" data-text-ar="برمجة روبوت" data-text-tr="Robot programlama" data-text-de="Roboterprogrammierung">
+                  Robot programming
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+        <span class="scroll-text"
+          data-text-en="Scroll Down"
+          data-text-ar="انتقل للأسفل"
+          data-text-tr="Aşağı Kaydır"
+          data-text-de="Nach unten scrollen">Scroll Down</span>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about-section fade-in">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-number">01</span>
+          <h2 class="section-title">
+            <span class="title-bracket">&lt;</span>
+            <span class="title-text"
+              data-text-en="About Me"
+              data-text-ar="عني"
+              data-text-tr="Hakkımda"
+              data-text-de="Über mich">About Me</span>
+            <span class="title-bracket">/&gt;</span>
+          </h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="about-content">
+          <div class="about-text-wrapper">
+            <p class="about-text"
+              data-text-en="I'm a dedicated Mechatronics Engineer who believes in learning by doing. While pursuing my degree, I've worked on myself relentlessly—gaining hands-on experience through industry work, personal projects, and continuous self-study. I specialize in mechanical design, embedded systems, and manufacturing technologies, with a passion for turning ideas into functional engineering solutions."
+              data-text-ar="أنا مهندس ميكاترونك وأؤمن بالتعلّم عبر التطبيق. أثناء دراستي، عملت على تطوير نفسي باستمرار من خلال الخبرة العملية ومشاريع شخصية وتعلّم ذاتي متواصل. أتخصص في التصميم الميكانيكي والأنظمة المضمنة وتقنيات التصنيع، ولدي شغف بتحويل الأفكار إلى حلول هندسية تعمل فعلاً."
+              data-text-tr="Ben Mekatronik Mühendisim ve yaparak öğrenmeye inanıyorum. Eğitimim sırasında kendimi sürekli geliştirdim; sektör deneyimi, kişisel projeler ve düzenli öz-öğrenme ile pratik beceriler kazandım. Mekanik tasarım, gömülü sistemler ve üretim teknolojilerinde uzmanlaşıyor; fikirleri çalışan mühendislik çözümlerine dönüştürmeyi seviyorum."
+              data-text-de="Ich bin Mechatronik-Ingenieur und glaube an Learning by Doing. Während meines Studiums habe ich mich konsequent weiterentwickelt – durch praktische Arbeit, eigene Projekte und kontinuierliches Selbststudium. Ich fokussiere mich auf mechanische Konstruktion, Embedded Systems und Fertigungstechnologien und setze Ideen gerne in funktionierende Lösungen um.">
+              I'm a dedicated Mechatronics Engineering student at Karabük University who believes in learning by doing...
+            </p>
+
+            <div class="about-stats">
+              <div class="stat-item">
+                <div class="stat-number" data-count="50">0</div>
+                <div class="stat-label"
+                  data-text-en="Projects"
+                  data-text-ar="مشروع"
+                  data-text-tr="Proje"
+                  data-text-de="Projekte">Projects</div>
+              </div>
+
+              <div class="stat-item">
+                <div class="stat-number" data-count="5">0</div>
+                <div class="stat-label"
+                  data-text-en="Years Experience"
+                  data-text-ar="سنوات خبرة"
+                  data-text-tr="Yıl Deneyim"
+                  data-text-de="Jahre Erfahrung">Years Experience</div>
+              </div>
+
+              <div class="stat-item">
+                <div class="stat-number" data-count="1">0</div>
+                <div class="stat-label"
+                  data-text-en="Mindset"
+                  data-text-ar="المنهج"
+                  data-text-tr="Yaklaşım"
+                  data-text-de="Mindset">Mindset</div>
+              </div>
+            </div>
+
+            <div class="note-box">
+              <i class="fas fa-lightbulb"></i>
+              <span
+                data-text-en="I worked on myself to learn while studying."
+                data-text-ar="عملت على تطوير نفسي والتعلّم أثناء الدراسة."
+                data-text-tr="Okurken kendimi geliştirerek öğrendim."
+                data-text-de="Ich habe mich während des Studiums aktiv weiterentwickelt.">
+                I worked on myself to learn while studying.
+              </span>
+            </div>
+          </div>
+
+          <div class="about-image-wrapper">
+            <div class="about-image-container">
+              <div class="code-block">
+                <div class="code-line">
+                  <span class="code-keyword">const</span>
+                  <span class="code-variable">abdalla</span>
+                  <span class="code-operator">=</span>
+                  <span class="code-brace">{</span>
+                </div>
+                <div class="code-line indent">
+                  <span class="code-property">name</span><span class="code-operator">:</span>
+                  <span class="code-string">'ABDALLA SOLIMAN'</span><span class="code-comma">,</span>
+                </div>
+                <div class="code-line indent">
+                  <span class="code-property">university</span><span class="code-operator">:</span>
+                  <span class="code-string">'Karabük University'</span><span class="code-comma">,</span>
+                </div>
+                <div class="code-line indent">
+                  <span class="code-property">department</span><span class="code-operator">:</span>
+                  <span class="code-string">'Mechatronics Engineering'</span><span class="code-comma">,</span>
+                </div>
+                <div class="code-line indent">
+                  <span class="code-property">focus</span><span class="code-operator">:</span>
+                  <span class="code-bracket">[</span>
+                  <span class="code-string">'Design'</span><span class="code-comma">,</span>
+                  <span class="code-string">'Embedded'</span><span class="code-comma">,</span>
+                  <span class="code-string">'Manufacturing'</span>
+                  <span class="code-bracket">]</span>
+                </div>
+                <div class="code-line">
+                  <span class="code-brace">}</span><span class="code-semicolon">;</span>
+                </div>
+              </div>
+
+              <div class="mini-cards">
+                <div class="mini-card">
+                  <i class="fas fa-graduation-cap"></i>
+                  <div>
+                    <div class="mini-title" data-text-en="Education" data-text-ar="التعليم" data-text-tr="Eğitim" data-text-de="Ausbildung">Education</div>
+                    <div class="mini-sub">Karabük University • Mechatronics</div>
+                  </div>
+                </div>
+                <div class="mini-card">
+                  <i class="fas fa-phone"></i>
+                  <div>
+                    <div class="mini-title" data-text-en="Phone" data-text-ar="الهاتف" data-text-tr="Telefon" data-text-de="Telefon">Phone</div>
+                    <div class="mini-sub">0545 129 01 90</div>
+                  </div>
+                </div>
+                <div class="mini-card">
+                  <i class="fas fa-envelope"></i>
+                  <div>
+                    <div class="mini-title" data-text-en="Email" data-text-ar="الإيميل" data-text-tr="E-posta" data-text-de="E-Mail">Email</div>
+                    <div class="mini-sub">010alzooz@gmail.com</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section skills-section fade-in">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-number">02</span>
+          <h2 class="section-title">
+            <span class="title-bracket">&lt;</span>
+            <span class="title-text"
+              data-text-en="Technical Skills"
+              data-text-ar="المهارات التقنية"
+              data-text-tr="Teknik Yetenekler"
+              data-text-de="Technische Skills">Technical Skills</span>
+            <span class="title-bracket">/&gt;</span>
+          </h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="skills-grid">
+
+          <div class="skill-category">
+            <h3 class="category-title"
+              data-text-en="Engineering"
+              data-text-ar="الهندسة"
+              data-text-tr="Mühendislik"
+              data-text-de="Engineering">Engineering</h3>
+
+            <div class="skill-items">
+              <div class="skill-item" data-skill="SolidWorks" data-percent="94">
+                <div class="skill-header"><span class="skill-name">SolidWorks</span><span class="skill-percent">0%</span></div>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+              </div>
+
+              <div class="skill-item" data-skill="Ansys" data-percent="90">
+                <div class="skill-header"><span class="skill-name">Ansys</span><span class="skill-percent">0%</span></div>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+              </div>
+
+              <div class="skill-item" data-skill="MATLAB/Simulink/Simscape" data-percent="80">
+                <div class="skill-header"><span class="skill-name">MATLAB • Simulink • Simscape</span><span class="skill-percent">0%</span></div>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+              </div>
+
+              <div class="skill-item" data-skill="KUKA Programming" data-percent="98">
+                <div class="skill-header"><span class="skill-name">KUKA Robot Programming</span><span class="skill-percent">0%</span></div>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+              </div>
+
+              <div class="skill-item" data-skill="CAM (SolidWorks/Mastercam)" data-percent="90">
+                <div class="skill-header"><span class="skill-name">SolidWorks CAM • Mastercam</span><span class="skill-percent">0%</span></div>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="category-title"
+              data-text-en="Programming"
+              data-text-ar="البرمجة"
+              data-text-tr="Programlama"
+              data-text-de="Programmierung">Programming</h3>
+
+            <div class="skill-items">
+              <div class="skill-item" data-skill="Python" data-percent="90">
+                <div class="skill-header"><span class="skill-name">Python</span><span class="skill-percent">0%</span></div>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+              </div>
+
+              <div class="skill-item" data-skill="C" data-percent="70">
+                <div class="skill-header"><span class="skill-name">C</span><span class="skill-percent">0%</span></div>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+              </div>
+
+              <div class="skill-item" data-skill="C++" data-percent="70">
+                <div class="skill-header"><span class="skill-name">C++</span><span class="skill-percent">0%</span></div>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+              </div>
+
+              <div class="skill-item" data-skill="Beginner AI Programming" data-percent="90">
+                <div class="skill-header"><span class="skill-name" data-text-en="Beginner AI Programming" data-text-ar="برمجة ذكاء اصطناعي (مبتدئ)" data-text-tr="AI Programlama (Başlangıç)" data-text-de="KI Programmierung (Anfänger)">Beginner AI Programming</span><span class="skill-percent">0%</span></div>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+              </div>
+
+              <div class="skill-item" data-skill="Python Prompting" data-percent="85">
+                <div class="skill-header"><span class="skill-name">Python Prompt</span><span class="skill-percent">0%</span></div>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3 class="category-title"
+              data-text-en="Web & Tools"
+              data-text-ar="الويب والأدوات"
+              data-text-tr="Web & Araçlar"
+              data-text-de="Web & Tools">Web & Tools</h3>
+
+            <div class="skill-items">
+              <div class="skill-item" data-skill="Web Programming" data-percent="90">
+                <div class="skill-header"><span class="skill-name" data-text-en="Internet-based programming" data-text-ar="برمجة الويب" data-text-tr="Web programlama" data-text-de="Web-Programmierung">Internet-based programming</span><span class="skill-percent">0%</span></div>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+              </div>
+
+              <div class="skill-item" data-skill="Office" data-percent="95">
+                <div class="skill-header"><span class="skill-name" data-text-en="Office Programs" data-text-ar="برامج الأوفيس" data-text-tr="Office Programları" data-text-de="Office Programme">Office Programs</span><span class="skill-percent">0%</span></div>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+              </div>
+
+              <div class="skill-item" data-skill="Proteus" data-percent="75">
+                <div class="skill-header"><span class="skill-name">Proteus</span><span class="skill-percent">0%</span></div>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+              </div>
+
+              <div class="skill-item" data-skill="Photoshop" data-percent="75">
+                <div class="skill-header"><span class="skill-name">Photoshop</span><span class="skill-percent">0%</span></div>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+              </div>
+
+              <div class="skill-item" data-skill="HTML/CSS/JS/jQuery/Bootstrap" data-percent="90">
+                <div class="skill-header">
+                  <span class="skill-name">HTML • CSS • JavaScript • jQuery • Bootstrap</span>
+                  <span class="skill-percent">0%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-progress"></div></div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="languages-card">
+          <h3 class="languages-title"
+            data-text-en="Languages"
+            data-text-ar="اللغات"
+            data-text-tr="Diller"
+            data-text-de="Sprachen">Languages</h3>
+
+          <div class="languages-grid">
+            <div class="lang-chip"><i class="fas fa-flag"></i><span data-text-en="Arabic — 100%" data-text-ar="العربية — 100%" data-text-tr="Arapça — 100%" data-text-de="Arabisch — 100%">Arabic — 100%</span></div>
+            <div class="lang-chip"><i class="fas fa-flag"></i><span data-text-en="Turkish — 95%" data-text-ar="التركية — 95%" data-text-tr="Türkçe — 95%" data-text-de="Türkisch — 95%">Turkish — 95%</span></div>
+            <div class="lang-chip"><i class="fas fa-flag"></i><span data-text-en="English — 75%" data-text-ar="الإنجليزية — 75%" data-text-tr="İngilizce — 75%" data-text-de="Englisch — 75%">English — 75%</span></div>
+            <div class="lang-chip"><i class="fas fa-flag"></i><span data-text-en="German — 30% (learning)" data-text-ar="الألمانية — 30% (قيد التعلم)" data-text-tr="Almanca — 30% (öğreniyorum)" data-text-de="Deutsch — 30% (lerne)">German — 30% (learning)</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+   <!-- PROJECTS -->
+<section id="projects" class="section projects-section fade-in">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="section-number">03</span>
+      <h2 class="section-title">
+        <span class="title-bracket">&lt;</span>
+        <span class="title-text"
+              data-text-en="Projects"
+              data-text-ar="المشاريع"
+              data-text-tr="Projeler"
+              data-text-de="Projekte">Projects</span>
+        <span class="title-bracket">/&gt;</span>
+      </h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="projects-grid">
+      <!-- Projects -->
+      <a href="projects.html" class="project-card">
+        <div class="project-image">
+          <div class="project-placeholder">
+            <i class="fas fa-folder-open"></i>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <h3 class="project-title"
+              data-text-en="Projects"
+              data-text-ar="المشاريع"
+              data-text-tr="Projeler"
+              data-text-de="Projekte">Projects</h3>
+
+          <p class="project-description"
+             data-text-en="View all my engineering and software projects."
+             data-text-ar="عرض جميع مشاريعي الهندسية والبرمجية."
+             data-text-tr="Tüm mühendislik ve yazılım projelerimi görüntüle."
+             data-text-de="Alle meine Engineering- und Softwareprojekte ansehen.">
+            View all my engineering and software projects.
+          </p>
+
+          <div class="project-tags">
+            <span class="tag">Portfolio</span>
+            <span class="tag">Work</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Certificates -->
+      <a href="certificates.html" class="project-card">
+        <div class="project-image">
+          <div class="project-placeholder">
+            <i class="fas fa-certificate"></i>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <h3 class="project-title"
+              data-text-en="Certificates"
+              data-text-ar="الشهادات"
+              data-text-tr="Sertifikalar"
+              data-text-de="Zertifikate">Certificates</h3>
+
+          <p class="project-description"
+             data-text-en="See the certificates and courses I completed."
+             data-text-ar="عرض الشهادات والدورات التي حصلت عليها."
+             data-text-tr="Aldığım sertifikaları ve tamamladığım kursları görüntüle."
+             data-text-de="Meine Zertifikate und abgeschlossenen Kurse ansehen.">
+            See the certificates and courses I completed.
+          </p>
+
+          <div class="project-tags">
+            <span class="tag">Courses</span>
+            <span class="tag">Awards</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact-section fade-in">
+      <div class="section-container">
+        <div class="section-header">
+          <span class="section-number">04</span>
+          <h2 class="section-title">
+            <span class="title-bracket">&lt;</span>
+            <span class="title-text"
+              data-text-en="Contact"
+              data-text-ar="التواصل"
+              data-text-tr="İletişim"
+              data-text-de="Kontakt">Contact</span>
+            <span class="title-bracket">/&gt;</span>
+          </h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-user"></i></div>
+              <div class="contact-details">
+                <h4 class="contact-label"
+                  data-text-en="Name"
+                  data-text-ar="الاسم"
+                  data-text-tr="İsim"
+                  data-text-de="Name">Name</h4>
+                <span class="contact-value">ABDALLA SOLIMAN</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-phone"></i></div>
+              <div class="contact-details">
+                <h4 class="contact-label"
+                  data-text-en="Phone"
+                  data-text-ar="الهاتف"
+                  data-text-tr="Telefon"
+                  data-text-de="Telefon">Phone</h4>
+                <a class="contact-value"
+                  href="https://wa.me/905451290190"
+                  target="_blank"
+                  rel="noopener noreferrer">0545 129 01 90</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact-details">
+                <h4 class="contact-label"
+                  data-text-en="Email"
+                  data-text-ar="البريد"
+                  data-text-tr="E-posta"
+                  data-text-de="E-Mail">Email</h4>
+               <a class="contact-value"
+                   href="https://mail.google.com/mail/?view=cm&fs=1&to=010alzooz@gmail.com"
+                   target="_blank"
+                   rel="noopener noreferrer">010alzooz@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-graduation-cap"></i></div>
+              <div class="contact-details">
+                <h4 class="contact-label"
+                  data-text-en="Education"
+                  data-text-ar="التعليم"
+                  data-text-tr="Eğitim"
+                  data-text-de="Ausbildung">Education</h4>
+                <span class="contact-value"
+                  data-text-en="Karabük University • Mechatronics Engineering"
+                  data-text-ar="جامعة كارابوك • هندسة ميكاترونك"
+                  data-text-tr="Karabük Üniversitesi • Mekatronik Mühendisliği"
+                  data-text-de="Karabük Universität • Mechatronik">
+                  Karabük University • Mechatronics Engineering
+                </span>
+              </div>
+            </div>
+          </div>
+
+         
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-text-wrapper">
+          <p class="footer-text">
+            <span class="footer-copyright">© 2026 ABDALLA SOLIMAN</span>
+            <span class="footer-divider">•</span>
+            <span class="footer-built"
+              data-text-en="Built with passion and code"
+              data-text-ar="صُنع بالشغف والكود"
+              data-text-tr="Tutku ve kod ile"
+              data-text-de="Mit Leidenschaft und Code">
+              Built with passion and code
+            </span>
+          </p>
+        </div>
+
+        <div class="footer-social">
+          <a href="mailto:010alzooz@gmail.com" class="footer-social-link" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="tel:+905451290190" class="footer-social-link" title="Phone"><i class="fas fa-phone"></i></a>
+          <a href="#" class="footer-social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="footer-social-link" title="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
+</body>
+</html>

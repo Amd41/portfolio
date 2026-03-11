@@ -862,28 +862,3 @@ img { max-width: 100%; height: auto; }
   border-radius: 12px;
 
 } 
-/* Fix HERO buttons on mobile */
-@media (max-width: 768px){
-
-  .hero-buttons{
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-    align-items: stretch;
-  }
-
-  .hero-buttons .btn{
-    width: 100%;
-    justify-content: center;
-    padding: 14px 16px;
-    font-size: 0.95rem;
-  }
-
-  /* لو عندك أي max-width على الأزرار */
-  .hero-buttons .btn,
-  .hero-buttons a{
-    max-width: 100%;
-  }
-}
-html, body { overflow-x: hidden; }

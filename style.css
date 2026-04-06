@@ -846,3 +846,22 @@ img { max-width: 100%; height: auto; }
   border-radius: 12px;
 
 } 
+
+@media (max-width: 768px){
+  .hero-section{
+    min-height: auto;
+    overflow: visible;   /* مهم: يمنع قص المحتوى */
+    padding: 2rem 0;
+  }
+  .hero-background{
+    overflow: hidden;    /* نخلي القص للخلفية فقط */
+  }
+}
+
+@media (max-width: 480px){
+  .hero-name{
+    white-space: normal;                 /* يسمح بالنزول سطر إذا احتاج */
+    font-size: clamp(1.6rem, 8vw, 2.2rem); /* يصغر تلقائياً */
+    line-height: 1.15;
+  }
+}

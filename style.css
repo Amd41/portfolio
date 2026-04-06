@@ -93,13 +93,13 @@ img { max-width: 100%; height: auto; }
 /* Header / Nav */
 .main-header {
   position: fixed; top:0; left:0; width:100%;
-  background: rgba(10,14,39,.8);
+  background: rgba(10,14,39,0.8);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border);
   z-index: 1000;
   transition: all var(--transition);
 }
-.main-header.scrolled { background: rgba(10,14,39,.95); box-shadow: var(--shadow-md); }
+.main-header.scrolled { background: rgba(10,14,39,0.95); box-shadow: var(--shadow-md); }
 .nav-container {
   max-width: 1400px; margin: 0 auto;
   padding: 1rem 2rem;
@@ -222,7 +222,7 @@ img { max-width: 100%; height: auto; }
   font-size: clamp(1.8rem, 6vw, 3.3rem); /* يصغر على الموبايل */
   line-height: 1.15;
   margin-bottom: 1.5rem;
-  white-space: nowrap;      /* يمنع الاسم من النزول لسطر جديد */
+  white-space: normal;      /* يمنع الاسم من النزول لسطر جديد */
 }
 .name-prefix { color: var(--secondary); }
 .name-operator { color: var(--cyan); margin: 0 .5rem; }
@@ -362,7 +362,7 @@ img { max-width: 100%; height: auto; }
   border-radius: 14px;
   background: rgba(192,132,252,0.08);
   border: 1px solid rgba(192,132,252,0.25);
-  display:flex; align-items:center; gap: .8rem;
+  display:flex; align-items:center; gap: 0.8rem;
   color: var(--text-secondary);
 }
 .note-box i { color: var(--accent); }
